@@ -1,30 +1,56 @@
-"use client";
-import React, { useState } from "react";
+import { SidebarProps } from "@/src/types";
+import clsx from "clsx";
+import { Itembar } from "./Itembar";
+import { nanoid } from "nanoid";
+import { menuItems } from "@/src/constants";
+import Image from "next/image";
 
-export const Sidebar = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-
+export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   return (
     <div>
       <div
-        className={`fixed left-0 top-0 lg:w-1/4 md:w-1/2 w-4/6 h-full md:p-4 p-2 shadow-lg bg-white border-gray-950 border-2   transform transition-transform duration-500 ease-in-out z-50
-        ${isModalOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={clsx(
+          "fixed left-0 top-0 lg:w-1/4 md:w-1/2 w-4/6 h-full p-8 shadow-lg bg-ghibli-black  transform transition-transform duration-500 ease-in-out z-50",
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        )}
       >
-        <div className="flex flex-col justify-between h-full">
-          <div className="flex flex-col h-3/4">
-            <p className="font-light md:text-[18px] text-[14px]  mb-3 ">
-              MY ORDERS
-            </p>
+        <div className="flex flex-col h-full">
+          <div className="flex flex-row gap-5 items-center mb-10">
+            <Image
+              src="/ghibli-icon.png"
+              alt="ghibli-title"
+              className="w-8 h-8  object-cover"
+              width={100}
+              height={100}
+            />
+            <div className="flex flex-col gap-1 w-full text-left">
+              <p className="text-4xl text-ghibli-white font-semibold">
+                Studio Ghibli
+              </p>
+              <p className="text-2xl text-ghibli-white italic font-light">
+                スタジオジブリ
+              </p>
+            </div>
           </div>
+          <div className="flex flex-col h-full gap-5">
+            {menuItems.map((item) => (
+              <Itembar
+                key={nanoid()}
+                img={item.img}
+                title={item.title}
+              ></Itembar>
+            ))}
+          </div>
+          <Itembar
+            img="/ghibli-web/icon_kinen.png"
+            title="Github creator"
+          ></Itembar>
         </div>
       </div>
-      {isModalOpen && (
+      {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
-          onClick={toggleModal}
+          className="fixed inset-0 bg-black opacity-25 z-40"
+          onClick={onClose}
         ></div>
       )}
     </div>
