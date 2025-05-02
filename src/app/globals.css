@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
-:root {
+@theme {
+  --font-noto-ghibli: var(--font-noto-sans), "sans-serif";
+  --color-ghibli-white: #ffffff;
+  --color-ghibli-blue: #0d9ceb;
+  --color-ghibli-sky: #05afbe;
+  --color-ghibli-sky: #05afbe;
+  --color-ghibli-orange: #ee6a27;
+  --color-ghibli-black: #211816;
+}
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +33,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
