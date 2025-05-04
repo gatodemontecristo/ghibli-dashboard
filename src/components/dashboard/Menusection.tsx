@@ -10,15 +10,21 @@ export const Menusection = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="flex flex-wrap ">
-      <div className="flex flex-col gap-2">
-        <button
-          onClick={onClose}
-          type="button"
-          className="bg-ghibli-orange hover:bg-[#ff722a] text-2xl active:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
-        >
-          <FiAlignJustify />
-        </button>
+    <div className="flex flex-col flex-wrap p-5 items-center justify-start w-full bg-ghibli-pink">
+      <div className="flex flex-col gap-2 h-full">
+        <div>
+          <button
+            onClick={onClose}
+            type="button"
+            className="bg-ghibli-orange  hover:bg-[#ff722a] text-2xl active:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
+          >
+            <FiAlignJustify />
+          </button>
+        </div>
+        <div className="flex flex-col  h-full">
+          <p className="text-ghibli-orange text-xl font-bold">Main</p>
+          <div className="bg-ghibli-orange w-[80px] h-[5px]"></div>
+        </div>
         <Image
           src="/ghibli-web/mei.png"
           alt="ghibli-title"
@@ -27,6 +33,7 @@ export const Menusection = () => {
           height={100}
         />
       </div>
+
       <Sidebar {...{ onClose, isOpen }}></Sidebar>
     </div>
   );

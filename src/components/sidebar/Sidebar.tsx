@@ -4,6 +4,7 @@ import { Itembar } from "./Itembar";
 import { nanoid } from "nanoid";
 import { menuItems } from "@/src/constants";
 import Image from "next/image";
+import { Itemextra } from "./Itemextra";
 
 export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   return (
@@ -38,13 +39,21 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                 key={nanoid()}
                 img={item.img}
                 title={item.title}
+                onClick={() => {}}
               ></Itembar>
             ))}
           </div>
-          <Itembar
+          <Itemextra
             img="/ghibli-web/icon_kinen.png"
             title="Github creator"
-          ></Itembar>
+            secondary="Erick Dejo Vicente"
+            onClick={() =>
+              window.open(
+                "https://github.com/gatodemontecristo/ghibli-dashboard",
+                "_blank"
+              )
+            }
+          ></Itemextra>
         </div>
       </div>
       {isOpen && (
