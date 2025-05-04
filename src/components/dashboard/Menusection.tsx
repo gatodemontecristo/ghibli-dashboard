@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FiAlignJustify } from "react-icons/fi";
 
 export const Menusection = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const onClose = () => {
     setIsOpen(!isOpen);
   };
