@@ -10,7 +10,7 @@ export const Menusection = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="flex flex-col flex-wrap p-5 items-center justify-start w-full bg-ghibli-pink">
+    <div className="flex flex-col flex-wrap p-5 items-center justify-start w-full bg-ghibli-pink h-screen">
       <div className="flex flex-col gap-2 h-full">
         <div>
           <button
