@@ -5,12 +5,12 @@ import { useState } from "react";
 import { FiAlignJustify } from "react-icons/fi";
 
 export const Menusection = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const onClose = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="flex flex-col flex-wrap p-5 items-center justify-start w-full bg-ghibli-pink">
+    <div className="flex flex-col flex-wrap p-5 items-center justify-start w-full bg-ghibli-pink h-screen">
       <div className="flex flex-col gap-2 h-full">
         <div>
           <button

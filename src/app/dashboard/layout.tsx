@@ -6,11 +6,13 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-row bg-slate-100  w-full h-screen text-slate-300">
+    <div className="flex flex-row bg-ghibli-pink  w-full h-screen text-slate-300">
       <div className="flex w-[12%] ">
         <Menusection />
       </div>
-      <div className="flex flex-row w-full">{children}</div>
+      <div className="flex flex-row w-full flex-wrap overflow-y-scroll">
+        {children}
+      </div>
     </div>
   );
 }

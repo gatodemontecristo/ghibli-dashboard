@@ -1,37 +1,62 @@
-import Image from "next/image";
+import { MainCard } from "@/src/components";
 
 export const metadata = {
   title: "Ghibli Dashboard",
   description: "SEO Title",
 };
-
 export default function MainPage() {
   return (
     <div className="flex flex-row  justify-center items-center bg-ghibli-blue w-full h-full text-center">
-      <div className="flex flex-col gap-5 w-1/2 justify-center items-center">
-        <Image
-          src={"/ghibli-help/main.png"}
-          alt="Main Ghibli image"
-          className="w-70"
-          width={100}
-          height={100}
-        ></Image>
-        <div className="flex flex-col gap-2">
-          <h2 className="text-2xl font-extrabold text-ghibli-white">
-            Studio Ghibli Film Explorer
-          </h2>
-          <p className="text-xl font-light italic text-ghibli-white">
-            ジブリ映画を探す旅
-          </p>
-          <h3 className="text-ghibli-white  font-bold">
-            Discover the enchanting world of Ghibli movies, all in one place.
-          </h3>
-          <p className="text-ghibli-white font-light">
-            Dive into a beautifully designed web experience where you can
-            explore the full collection of Studio Ghibli films. Learn about each
-            movie’s title, release date, director, and synopsis — all presented
-            in a clean and user-friendly interface.
-          </p>
+      <MainCard
+        title="Ghibli Dashboard"
+        secondary="ジブリ映画を探す旅"
+        intro="Discover the enchanting world of Ghibli movies, all in one place."
+        description="Dive into a beautifully designed web experience where you can explore the full collection of Studio Ghibli films. Learn about each movie’s title, release date, director, and synopsis — all presented in a clean and user-friendly interface."
+        image={{
+          src: "/ghibli-help/main.png",
+          alt: "Main Ghibli image",
+        }}
+      >
+        <div>
+          <button
+            type="button"
+            className="bg-ghibli-orange w-[200px] hover:bg-[#ff722a] mt-5  active:bg-red-700 text-white font-extrabold py-3 px-4 rounded-lg transition-colors duration-200"
+          >
+            {`Let's start!`}
+          </button>
+        </div>
+      </MainCard>
+      {/* <MainCard2
+        title="Studio Ghibli Explorer"
+        subtitle="ジブリ映画を探す旅"
+        description="Discover the full catalog of Studio Ghibli films in one place."
+        image={{ src: "/ghibli.png", alt: "Ghibli Logo" }}
+      >
+        <MainCard2.Image />
+        <MainCard2.Title />
+        <MainCard2.Subtitle />
+        <MainCard2.Description />
+      </MainCard2> */}
+
+      {/*<MainCard
+        title="Ghibli Dashboard"
+        secondary="ジブリ映画を探す旅"
+        intro="Discover the enchanting world of Ghibli movies, all in one place."
+        description="Dive into a beautifully designed web experience where you can explore the full collection of Studio Ghibli films. Learn about each movie’s title, release date, director, and synopsis — all presented in a clean and user-friendly interface."
+        image={{
+          src: "/ghibli-help/main.png",
+          alt: "Main Ghibli image",
+        }}
+      >
+        <div></div>
+        <MainCard.Title></MainCard.Title>
+       <MainCard.Title></MainCard.Title>
+
+    <div className="flex flex-col gap-2">
+          <MainCard.Title></MainCard.Title>
+          <MainCard.Secondary></MainCard.Secondary>
+          <MainCard.Intro></MainCard.Intro>
+          <MainCard.Description></MainCard.Description>
           <div>
             <button
               type="button"
@@ -40,8 +65,8 @@ export default function MainPage() {
               {`Let's start!`}
             </button>
           </div>
-        </div>
-      </div>
+        </div> 
+      </MainCard>*/}
     </div>
   );
 }
