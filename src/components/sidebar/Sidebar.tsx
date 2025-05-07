@@ -35,12 +35,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           </div>
           <div className="flex flex-col h-full gap-5">
             {menuItems.map((item) => (
-              <Itembar
-                key={nanoid()}
-                img={item.img}
-                title={item.title}
-                onClick={() => {}}
-              ></Itembar>
+              <Itembar key={nanoid()} {...item}></Itembar>
             ))}
           </div>
           <Itemextra

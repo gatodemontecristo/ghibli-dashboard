@@ -3,9 +3,12 @@ import { ReactElement } from "react";
 export interface ItembarProps {
   img: string;
   title: string;
-  onClick: () => void;
+  path: string;
 }
-export interface ItemextraProps extends ItembarProps {
+export interface ItemextraProps {
+  img: string;
+  title: string;
+  onClick: () => void;
   secondary: string;
 }
 
