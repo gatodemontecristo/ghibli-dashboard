@@ -30,3 +30,10 @@ export interface MainCardProps {
   image: ImageProps;
   children?: ReactElement | ReactElement[];
 }
+
+export interface UnderlinedtitleProps {
+  title: string;
+  className: string;
+  color?: string;
+  underline?: string;
+}
