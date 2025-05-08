@@ -33,7 +33,7 @@ export interface MainCardProps {
 
 export interface UnderlinedtitleProps {
   title: string;
-  className: string;
+  className?: string;
   color?: string;
   underline?: string;
 }
