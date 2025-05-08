@@ -1,5 +1,5 @@
 "use client";
-import { Sidebar } from "@/src/components";
+import { Sidebar, Underlinedtitle } from "@/src/components";
 import Image from "next/image";
 import { useState } from "react";
 import { FiAlignJustify } from "react-icons/fi";
@@ -21,10 +21,13 @@ export const Menusection = () => {
             <FiAlignJustify />
           </button>
         </div>
-        <div className="flex flex-col  h-full">
-          <p className="text-ghibli-orange text-xl font-bold">Main</p>
-          <div className="bg-ghibli-orange w-[80px] h-[5px]"></div>
-        </div>
+        <Underlinedtitle
+          className="h-full"
+          title="Main"
+          color="text-ghibli-orange"
+          underline="bg-ghibli-orange"
+        ></Underlinedtitle>
+
         <Image
           src="/ghibli-web/mei.png"
           alt="ghibli-title"

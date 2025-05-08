@@ -1,10 +1,14 @@
 import { ItembarProps } from "@/src/types";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-export const Itembar = ({ img, title }: ItembarProps) => {
+export const Itembar = ({ img, title, path }: ItembarProps) => {
   return (
-    <div className="flex flex-row gap-3 items-center cursor-pointer group">
+    <Link
+      href={path}
+      className="flex flex-row gap-3 items-center cursor-pointer group"
+    >
       <Image
         src={img}
         alt={"ghibli-" + title}
@@ -15,6 +19,6 @@ export const Itembar = ({ img, title }: ItembarProps) => {
       <h2 className="text-xl font-semibold text-gray-200 group-hover:text-ghibli-orange group-hover:translate-x-2 transition-all duration-200">
         {title}
       </h2>
-    </div>
+    </Link>
   );
 };
