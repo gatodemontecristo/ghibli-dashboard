@@ -37,3 +37,10 @@ export interface UnderlinedtitleProps {
   color?: string;
   underline?: string;
 }
+export interface IconTextProps {
+  srcImg: string;
+  altImg: string;
+  type: "icon" | "img";
+  title: string;
+  subtitle: string;
+}
