@@ -3,13 +3,17 @@ import React from "react";
 import { CircleRating } from "./CircleRating";
 import { formatMinutesToTime } from "@/src/utils";
 import { GhibliFilms } from "@/src/types";
+import Link from "next/link";
 
 interface FilmCardProps {
   film: GhibliFilms;
 }
 export const FilmCard = ({ film }: FilmCardProps) => {
   return (
-    <div className="flex flex-col w-1/4 group cursor-pointer transition-all duration-300 overflow-hidden">
+    <Link
+      href={`detail/${film.id}`}
+      className="flex flex-col w-1/4 group cursor-pointer transition-all duration-300 overflow-hidden"
+    >
       <Image
         src={film.image}
         alt={film.title}
@@ -42,6 +46,6 @@ export const FilmCard = ({ film }: FilmCardProps) => {
           )}`}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };

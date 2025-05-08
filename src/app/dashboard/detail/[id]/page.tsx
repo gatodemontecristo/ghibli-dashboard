@@ -3,6 +3,7 @@ import {
   PosterSection,
   Underlinedtitle,
 } from "@/src/components";
+import { GhibliFilms } from "@/src/types";
 import Image from "next/image";
 import { FiAlignJustify } from "react-icons/fi";
 
@@ -10,29 +11,41 @@ export const metadata = {
   title: "Ghibli Films",
   description: "Explore the enchanting world of Studio Ghibli films.",
 };
+interface Props {
+  params: { id: string };
+}
 
-export default async function GhibliDetailPage() {
+const getGhibliDetail = async (id: string): Promise<GhibliFilms> => {
+  try {
+    const film = await fetch(`https://ghibliapi.vercel.app/films/${id}`, {
+      next: {
+        revalidate: 60 * 60 * 30 * 6,
+      },
+    }).then((resp) => resp.json());
+
+    return film;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to fetch Ghibli film details");
+  }
+};
+export default async function GhibliDetailPage({ params }: Props) {
+  const film = await getGhibliDetail(params.id);
+
   return (
     <div className="flex flex-col flex-wrap  p-10 w-full justify-center ">
       <div className="flex flex-row w-full">
         <PosterSection
           className="w-1/2"
-          srcImage="/ghibli-help/banner.webp"
+          srcImage={film.movie_banner}
           altImage="Ghibli Banner"
         ></PosterSection>
         <DetailSection
           className="w-1/2 bg-ghibli-blue"
           src="/ghibli-wallpaper/wallpaperbanner.webp"
         >
-          <Underlinedtitle title="Castle in the Sky"></Underlinedtitle>
-          <p className="text-ghibli-white ">
-            The orphan Sheeta inherited a mysterious crystal that links her to
-            the mythical sky-kingdom of Laputa. With the help of resourceful
-            Pazu and a rollicking band of sky pirates, she makes her way to the
-            ruins of the once-great civilization. Sheeta and Pazu must outwit
-            the evil Muska, who plans to use Laputas science to make himself
-            ruler of the world.
-          </p>
+          <Underlinedtitle title={film.title}></Underlinedtitle>
+          <p className="text-ghibli-white ">{film.description}</p>
         </DetailSection>
       </div>
       <div className="flex flex-row w-full">
@@ -84,8 +97,8 @@ export default async function GhibliDetailPage() {
 
         <PosterSection
           className="w-1/3"
-          srcImage="/ghibli-help/poster.webp"
-          altImage="Ghibli Banner"
+          srcImage={film.image}
+          altImage="Ghibli Poster"
         ></PosterSection>
 
         <DetailSection
