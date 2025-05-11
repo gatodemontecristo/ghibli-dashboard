@@ -13,7 +13,7 @@ export const DetailSection = ({
   return (
     <div
       className={clsx(
-        "relative overflow-hidden  px-10 py-5 flex flex-col justify-center items-start gap-3",
+        "relative overflow-hidden  px-10 py-5 flex flex-col justify-center items-start gap-3 ",
         className
       )}
     >
@@ -22,7 +22,7 @@ export const DetailSection = ({
           backgroundImage: `url('${src}')`,
         }}
         className={clsx(
-          "absolute inset-0 bg-center bg-no-repeat bg-cover opacity-10 pointer-events-none"
+          "absolute inset-0 bg-center bg-no-repeat bg-cover opacity-10 pointer-events-none "
         )}
         aria-hidden="true"
       ></div>

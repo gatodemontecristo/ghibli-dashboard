@@ -1,5 +1,7 @@
 import {
+  BasicButton,
   DetailSection,
+  FavoriteButton,
   IconText,
   PosterSection,
   Underlinedtitle,
@@ -8,6 +10,8 @@ import { GhibliFilms } from "@/src/types";
 import { IconTextProps } from "@/src/types/interfaces";
 import { formatMinutesToTime } from "@/src/utils";
 import { nanoid } from "nanoid";
+import Link from "next/link";
+import { MdNavigateBefore } from "react-icons/md";
 
 export const metadata = {
   title: "Ghibli Films",
@@ -83,7 +87,16 @@ export default async function GhibliDetailPage({ params }: Props) {
   ];
 
   return (
-    <div className="flex flex-col flex-wrap  p-10 w-full justify-center ">
+    <div className="flex flex-col flex-wrap  px-10 py-5 w-full justify-center ">
+      <div className="flex flex-row w-full items-center justify-center mb-5 gap-3">
+        <Link href={"/dashboard/films"}>
+          <BasicButton
+            icon={<MdNavigateBefore className="size-5"></MdNavigateBefore>}
+            text="Go back"
+          ></BasicButton>
+        </Link>
+        <FavoriteButton active={false}></FavoriteButton>
+      </div>
       <div className="flex flex-row w-full">
         <PosterSection
           className="w-1/2"
@@ -91,11 +104,11 @@ export default async function GhibliDetailPage({ params }: Props) {
           altImage="Ghibli Banner"
         ></PosterSection>
         <DetailSection
-          className="w-1/2 bg-ghibli-blue"
+          className="w-1/2 bg-ghibli-blue "
           src="/ghibli-wallpaper/wallpaperbanner.webp"
         >
           <Underlinedtitle title={film.title}></Underlinedtitle>
-          <p className="text-ghibli-white ">{film.description}</p>
+          <p className="text-ghibli-white line-clamp-6">{film.description}</p>
         </DetailSection>
       </div>
       <div className="flex flex-row w-full">
