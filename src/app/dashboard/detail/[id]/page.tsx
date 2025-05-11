@@ -1,11 +1,17 @@
 import {
+  BasicButton,
   DetailSection,
+  FavoriteButton,
+  IconText,
   PosterSection,
   Underlinedtitle,
 } from "@/src/components";
 import { GhibliFilms } from "@/src/types";
-import Image from "next/image";
-import { FiAlignJustify } from "react-icons/fi";
+import { IconTextProps } from "@/src/types/interfaces";
+import { formatMinutesToTime } from "@/src/utils";
+import { nanoid } from "nanoid";
+import Link from "next/link";
+import { MdNavigateBefore } from "react-icons/md";
 
 export const metadata = {
   title: "Ghibli Films",
@@ -32,8 +38,65 @@ const getGhibliDetail = async (id: string): Promise<GhibliFilms> => {
 export default async function GhibliDetailPage({ params }: Props) {
   const film = await getGhibliDetail(params.id);
 
+  const featureSection: IconTextProps[] = [
+    {
+      srcImg: "/ghibli-web/kuro02.svg",
+      altImg: "Kuro Icon",
+      type: "img",
+      title: "Japanese title",
+      subtitle: film.original_title,
+    },
+    {
+      srcImg: "/ghibli-web/kuro02.svg",
+      altImg: "Kuro Icon",
+      type: "img",
+      title: "Original title",
+      subtitle: film.original_title_romanised,
+    },
+    {
+      srcImg: "/ghibli-web/kuro02.svg",
+      altImg: "Kuro Icon",
+      type: "img",
+      title: "Director",
+      subtitle: film.director,
+    },
+  ];
+
+  const extraSection: IconTextProps[] = [
+    {
+      srcImg: "/ghibli-web/guy.png",
+      altImg: "Producer Icon",
+      type: "img",
+      title: "Producer",
+      subtitle: film.producer,
+    },
+    {
+      srcImg: "year",
+      altImg: "",
+      type: "icon",
+      title: "Realease year",
+      subtitle: film.release_date,
+    },
+    {
+      srcImg: "time",
+      altImg: "",
+      type: "icon",
+      title: "Running time",
+      subtitle: String(formatMinutesToTime(film.running_time)),
+    },
+  ];
+
   return (
-    <div className="flex flex-col flex-wrap  p-10 w-full justify-center ">
+    <div className="flex flex-col flex-wrap  px-10 py-5 w-full justify-center ">
+      <div className="flex flex-row w-full items-center justify-center mb-5 gap-3">
+        <Link href={"/dashboard/films"}>
+          <BasicButton
+            icon={<MdNavigateBefore className="size-5"></MdNavigateBefore>}
+            text="Go back"
+          ></BasicButton>
+        </Link>
+        <FavoriteButton active={false}></FavoriteButton>
+      </div>
       <div className="flex flex-row w-full">
         <PosterSection
           className="w-1/2"
@@ -41,11 +104,11 @@ export default async function GhibliDetailPage({ params }: Props) {
           altImage="Ghibli Banner"
         ></PosterSection>
         <DetailSection
-          className="w-1/2 bg-ghibli-blue"
+          className="w-1/2 bg-ghibli-blue "
           src="/ghibli-wallpaper/wallpaperbanner.webp"
         >
           <Underlinedtitle title={film.title}></Underlinedtitle>
-          <p className="text-ghibli-white ">{film.description}</p>
+          <p className="text-ghibli-white line-clamp-6">{film.description}</p>
         </DetailSection>
       </div>
       <div className="flex flex-row w-full">
@@ -55,44 +118,9 @@ export default async function GhibliDetailPage({ params }: Props) {
         >
           <Underlinedtitle title="Features"></Underlinedtitle>
 
-          <div className="flex flex-row gap-2 items-center">
-            <Image
-              src="/ghibli-web/kuro02.svg"
-              alt="Kuro Icon"
-              width={200}
-              height={200}
-              className="object-cover w-10 h-10"
-            ></Image>
-            <p className="text-xl  text-ghibli-white">
-              <span className=" font-extrabold">Japanese title:</span>{" "}
-              天空の城ラピュタ
-            </p>
-          </div>
-          <div className="flex flex-row gap-2 items-center">
-            <Image
-              src="/ghibli-web/kuro02.svg"
-              alt="Kuro Icon"
-              width={200}
-              height={200}
-              className="object-cover w-10 h-10"
-            ></Image>
-            <p className="text-xl  text-ghibli-white">
-              <span className=" font-extrabold">Original title:</span> Tenkū no
-              shiro Rapyuta
-            </p>
-          </div>
-          <div className="flex flex-row gap-2 items-center">
-            <Image
-              src="/ghibli-web/kuro02.svg"
-              alt="Kuro Icon"
-              width={200}
-              height={200}
-              className="object-cover w-10 h-10"
-            ></Image>
-            <p className="text-xl  text-ghibli-white">
-              <span className=" font-extrabold">a:</span> a
-            </p>
-          </div>
+          {featureSection.map((item) => (
+            <IconText key={nanoid()} {...item}></IconText>
+          ))}
         </DetailSection>
 
         <PosterSection
@@ -107,13 +135,9 @@ export default async function GhibliDetailPage({ params }: Props) {
         >
           <Underlinedtitle title="Extras"></Underlinedtitle>
 
-          <div className="flex flex-row gap-2 items-center">
-            <FiAlignJustify className="w-10 h-10 text-white" />
-            <p className="text-xl  text-ghibli-white">
-              <span className=" font-extrabold">Japanese title:</span>{" "}
-              天空の城ラピュタ
-            </p>
-          </div>
+          {extraSection.map((item) => (
+            <IconText key={nanoid()} {...item}></IconText>
+          ))}
         </DetailSection>
       </div>
     </div>

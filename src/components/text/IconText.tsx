@@ -1,15 +1,9 @@
+import { IconTextProps } from "@/src/types/interfaces";
 import Image from "next/image";
 import React from "react";
 import { FiCalendar } from "react-icons/fi";
 import { FiClock } from "react-icons/fi";
 
-interface IconTextProps {
-  srcImg: string;
-  altImg: string;
-  type: "icon" | "img";
-  title: string;
-  subtitle: string;
-}
 export const IconText = ({
   srcImg,
   altImg,

@@ -1,5 +1,6 @@
-import { MainCard } from "@/src/components";
+import { BasicButton, MainCard } from "@/src/components";
 import Link from "next/link";
+import { LuReceiptJapaneseYen } from "react-icons/lu";
 
 export const metadata = {
   title: "Ghibli Dashboard",
@@ -19,12 +20,12 @@ export default function MainPage() {
         }}
       >
         <Link href={"/dashboard/films"}>
-          <button
-            type="button"
-            className="bg-ghibli-orange w-[200px] hover:bg-[#ff722a] mt-5  active:bg-red-700 text-white font-extrabold py-3 px-4 rounded-lg transition-colors duration-200"
-          >
-            {`Let's start!`}
-          </button>
+          <BasicButton
+            icon={
+              <LuReceiptJapaneseYen className="size-5"></LuReceiptJapaneseYen>
+            }
+            text="Let's start!"
+          ></BasicButton>
         </Link>
       </MainCard>
     </div>
