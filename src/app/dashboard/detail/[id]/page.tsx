@@ -17,9 +17,6 @@ export const metadata = {
   title: "Ghibli Films",
   description: "Explore the enchanting world of Studio Ghibli films.",
 };
-interface Props {
-  params: { id: string };
-}
 
 const getGhibliDetail = async (id: string): Promise<GhibliFilms> => {
   try {
@@ -35,7 +32,11 @@ const getGhibliDetail = async (id: string): Promise<GhibliFilms> => {
     throw new Error("Failed to fetch Ghibli film details");
   }
 };
-export default async function GhibliDetailPage({ params }: Props) {
+export default async function GhibliDetailPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   const film = await getGhibliDetail(params.id);
 
   const featureSection: IconTextProps[] = [
