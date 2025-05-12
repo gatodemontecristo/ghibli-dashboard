@@ -1,4 +1,4 @@
-import { DirectorFilter } from "@/src/components";
+import { DirectorFilter, SorterFilter } from "@/src/components";
 import { FilmCard } from "@/src/components/card/FilmCard";
 import { GhibliFilms } from "@/src/types";
 import { nanoid } from "nanoid";
@@ -22,6 +22,7 @@ export default async function GhibliFilmsPage() {
     <>
       <div className="flex flex-row flex-wrap gap-4 p-10 w-full justify-center ">
         <DirectorFilter></DirectorFilter>
+        <SorterFilter></SorterFilter>
       </div>
       <div className="flex flex-row flex-wrap gap-4 p-10 w-full justify-center ">
         {collection.map((film) => (
