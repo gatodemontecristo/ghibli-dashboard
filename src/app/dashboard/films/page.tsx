@@ -1,3 +1,4 @@
+import { FilerSection } from "@/src/components";
 import { FilmCard } from "@/src/components/card/FilmCard";
 import { GhibliFilms } from "@/src/types";
 import { nanoid } from "nanoid";
@@ -18,10 +19,13 @@ const getGhibliFilms = async (): Promise<GhibliFilms[]> => {
 export default async function GhibliFilmsPage() {
   const collection = await getGhibliFilms();
   return (
-    <div className="flex flex-row flex-wrap gap-4 p-10 w-full justify-center ">
-      {collection.map((film) => (
-        <FilmCard key={nanoid()} film={film}></FilmCard>
-      ))}
-    </div>
+    <>
+      <FilerSection></FilerSection>
+      <div className="flex flex-row flex-wrap gap-4 px-10 pt-5 pb-15 w-full justify-center ">
+        {collection.map((film) => (
+          <FilmCard key={nanoid()} film={film}></FilmCard>
+        ))}
+      </div>
+    </>
   );
 }

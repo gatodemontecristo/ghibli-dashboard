@@ -44,3 +44,14 @@ export interface IconTextProps {
   title: string;
   subtitle: string;
 }
+
+export interface DirectorItemsType {
+  img: string;
+  director: string;
+  check: boolean;
+}
+
+export interface SorterOptionsType {
+  value: string;
+  label: string;
+}
