@@ -128,7 +128,7 @@ export const DirectorFilter = () => {
                     type="checkbox"
                     checked={check}
                     onChange={() => handleChange(director)}
-                    className="h-4 w-4 text-blue-600 border-gray-300 rounded"
+                    className="h-4 w-4 text-ghibli-blue border-gray-300 rounded"
                   />
                   <Image
                     src={img}

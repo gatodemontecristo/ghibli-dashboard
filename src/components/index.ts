@@ -10,3 +10,5 @@ export { BasicButton } from "./basic/BasicButton";
 export { FavoriteButton } from "./basic/FavoriteButton";
 export { DirectorFilter } from "./filter/DirectorFilter";
 export { SorterFilter } from "./filter/SorterFilter";
+export { SearchInput } from "./filter/SearchInput";
+export { FilerSection } from "./filter/FilerSection";
