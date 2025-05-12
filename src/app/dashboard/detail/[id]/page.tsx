@@ -35,9 +35,11 @@ const getGhibliDetail = async (id: string): Promise<GhibliFilms> => {
 export default async function GhibliDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const film = await getGhibliDetail(params.id);
+  const { id } = await params;
+
+  const film = await getGhibliDetail(id);
 
   const featureSection: IconTextProps[] = [
     {
