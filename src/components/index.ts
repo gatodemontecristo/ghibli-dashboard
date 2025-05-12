@@ -8,3 +8,5 @@ export { PosterSection } from "./detail/PosterSection";
 export { IconText } from "./text/IconText";
 export { BasicButton } from "./basic/BasicButton";
 export { FavoriteButton } from "./basic/FavoriteButton";
+export { DirectorFilter } from "./filter/DirectorFilter";
+export { SorterFilter } from "./filter/SorterFilter";
