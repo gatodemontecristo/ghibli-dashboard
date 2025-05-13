@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 import "./globals.css";
+import Providers from "../store/Providers";
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -17,7 +18,6 @@ export const metadata: Metadata = {
     icon: "/ghibli-icon.png",
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,7 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${notoSans.className}  antialiased`}>{children}</body>
+      <body className={`${notoSans.className}  antialiased`}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
