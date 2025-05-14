@@ -32,7 +32,7 @@ export const FavoriteButton = ({
       onClick={handleClick}
     >
       {icon}
-      {text}
+      <span className="text-white">{text}</span>
     </button>
   );
 };

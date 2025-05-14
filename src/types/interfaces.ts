@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { GhibliFilms } from "./ghibli-films";
 
 export interface ItembarProps {
   img: string;
@@ -54,4 +55,8 @@ export interface DirectorItemsType {
 export interface SorterOptionsType {
   value: string;
   label: string;
+}
+
+export interface FilmCardProps {
+  film: GhibliFilms;
 }

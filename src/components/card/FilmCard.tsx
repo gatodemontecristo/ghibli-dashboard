@@ -3,24 +3,14 @@ import Image from "next/image";
 import React from "react";
 import { CircleRating } from "./CircleRating";
 import { formatMinutesToTime } from "@/src/utils";
-import { GhibliFilms } from "@/src/types";
 import Link from "next/link";
 import { InvisibleButton } from "../basic/InvisibleButton";
 import { FaHeart } from "react-icons/fa";
-import { useAppDispatch, useAppSelector } from "@/src/store/hooks";
-import { toggleFavorite } from "@/src/store/films/films";
+import { FilmCardProps } from "@/src/types/interfaces";
+import { useFavorite } from "@/src/hooks";
 
-interface FilmCardProps {
-  film: GhibliFilms;
-}
 export const FilmCard = ({ film }: FilmCardProps) => {
-  const isFavorite = useAppSelector(
-    (state) => !!state.ghibli.favorites[film.id]
-  );
-  const dispatch = useAppDispatch();
-  const onToggle = () => {
-    dispatch(toggleFavorite(film));
-  };
+  const { onToggle, isFavorite } = useFavorite({ film });
   return (
     <div className="flex flex-col w-1/4 group cursor-pointer transition-all duration-300 overflow-hidden relative">
       <Link href={`detail/${film.id}`}>

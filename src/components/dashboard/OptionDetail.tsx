@@ -4,10 +4,12 @@ import React from "react";
 import { BasicButton } from "../basic/BasicButton";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { FavoriteButton } from "../basic/FavoriteButton";
-import { useAppSelector } from "@/src/store/hooks";
+import { FilmCardProps } from "@/src/types/interfaces";
+import { useFavorite } from "@/src/hooks";
 
-export const OptionDetail = ({ id }: { id: string }) => {
-  const isFavorite = useAppSelector((state) => !!state.ghibli.favorites[id]);
+export const OptionDetail = ({ film }: FilmCardProps) => {
+  const { onToggle, isFavorite } = useFavorite({ film });
+
   return (
     <div className="flex flex-row w-full items-center justify-center mb-5 gap-3">
       <Link href={"/dashboard/films"}>
@@ -21,6 +23,7 @@ export const OptionDetail = ({ id }: { id: string }) => {
       <FavoriteButton
         text={isFavorite ? "I dont like it" : "I like it"}
         active={isFavorite}
+        onClick={onToggle}
       ></FavoriteButton>
     </div>
   );
