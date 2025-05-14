@@ -1,14 +1,20 @@
 "use client";
-import { useRef } from "react";
 import { Provider } from "react-redux";
-import { AppStore, makeStore } from ".";
+import { store } from "./";
+import { useEffect } from "react";
+import { setFavoriteGhibli } from "./films/films";
 
-export default function Providers({ children }: { children: React.ReactNode }) {
-  const storeRef = useRef<AppStore>(undefined);
-  if (!storeRef.current) {
-    // Create the store instance the first time this renders
-    storeRef.current = makeStore();
-  }
-
-  return <Provider store={storeRef.current}>{children}</Provider>;
+interface Props {
+  children: React.ReactNode;
 }
+
+export const Providers = ({ children }: Props) => {
+  useEffect(() => {
+    const favorites = JSON.parse(
+      localStorage.getItem("favorite-ghibli-films") ?? "{}"
+    );
+    store.dispatch(setFavoriteGhibli(favorites));
+  }, []);
+
+  return <Provider store={store}>{children}</Provider>;
+};

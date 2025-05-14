@@ -1,22 +1,21 @@
 "use client";
+
 import clsx from "clsx";
 import { MouseEvent, ReactNode } from "react";
 import { FaHeart } from "react-icons/fa";
 
-interface FavoriteButtonProps {
+interface InvisibleButtonProps {
   className?: string;
   active?: boolean;
   icon?: ReactNode;
-  text: string;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
-export const FavoriteButton = ({
+export const InvisibleButton = ({
   className,
   active = false,
   icon = <FaHeart className="size-5" />,
-  text,
   onClick = () => {},
-}: FavoriteButtonProps) => {
+}: InvisibleButtonProps) => {
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     if (onClick) onClick(event);
@@ -25,14 +24,13 @@ export const FavoriteButton = ({
     <button
       type="button"
       className={clsx(
-        "bg-ghibli-blue  flex flex-row items-center gap-2 hover:bg-ghibli-sky mt-5  active:bg-red-700 font-extrabold py-3 px-4 rounded-lg transition-colors duration-200",
+        "bg-none  flex flex-row items-center gap-2 mt-5 font-extrabold py-3 px-4 transition-colors duration-200",
         active ? "text-red-600" : "text-white hover:text-yellow-400",
         className
       )}
       onClick={handleClick}
     >
       {icon}
-      {text}
     </button>
   );
 };

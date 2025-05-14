@@ -1,18 +1,15 @@
-import { configureStore, Tuple } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import ghibliReducer from "./films/films";
-import { localStorageMiddleware } from "./middlewares/localstorage-middleware";
 
-export const makeStore = () => {
-  return configureStore({
-    reducer: {
-      ghibli: ghibliReducer,
-      middleware: () => new Tuple(localStorageMiddleware),
-    },
-  });
-};
+export const store = configureStore({
+  reducer: {
+    ghibli: ghibliReducer,
+  },
+});
 
-// Infer the type of makeStore
-export type AppStore = ReturnType<typeof makeStore>;
-// Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<AppStore["getState"]>;
-export type AppDispatch = AppStore["dispatch"];
+store.subscribe(() => {
+  const { favorites } = store.getState().ghibli;
+  localStorage.setItem("favorite-ghibli-films", JSON.stringify(favorites));
+});
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

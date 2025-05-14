@@ -1,27 +1,47 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { CircleRating } from "./CircleRating";
 import { formatMinutesToTime } from "@/src/utils";
 import { GhibliFilms } from "@/src/types";
 import Link from "next/link";
+import { InvisibleButton } from "../basic/InvisibleButton";
+import { FaHeart } from "react-icons/fa";
+import { useAppDispatch, useAppSelector } from "@/src/store/hooks";
+import { toggleFavorite } from "@/src/store/films/films";
 
 interface FilmCardProps {
   film: GhibliFilms;
 }
 export const FilmCard = ({ film }: FilmCardProps) => {
+  const isFavorite = useAppSelector(
+    (state) => !!state.ghibli.favorites[film.id]
+  );
+  const dispatch = useAppDispatch();
+  const onToggle = () => {
+    dispatch(toggleFavorite(film));
+  };
   return (
-    <Link
-      href={`detail/${film.id}`}
-      className="flex flex-col w-1/4 group cursor-pointer transition-all duration-300 overflow-hidden"
-    >
-      <Image
-        src={film.image}
-        alt={film.title}
-        className="w-full object-cover transform transition-transform duration-300 group-hover:scale-105 "
-        width={100}
-        height={100}
-      />
-      <div className="flex flex-col z-30  w-full text-center gap-3 bg-ghibli-blue p-2 h-full  group-hover:bg-ghibli-sky transition-colors duration-300">
+    <div className="flex flex-col w-1/4 group cursor-pointer transition-all duration-300 overflow-hidden relative">
+      <Link href={`detail/${film.id}`}>
+        <Image
+          src={film.image}
+          alt={film.title}
+          className="w-full object-cover transform transition-transform duration-300 group-hover:scale-105 "
+          width={100}
+          height={100}
+        />
+      </Link>
+      <InvisibleButton
+        className="absolute right-4 top-0 z-index-20"
+        icon={<FaHeart className="size-6" />}
+        onClick={onToggle}
+        active={isFavorite}
+      ></InvisibleButton>
+      <Link
+        href={`detail/${film.id}`}
+        className="flex flex-col z-30  w-full text-center gap-3 bg-ghibli-blue p-2 h-full  group-hover:bg-ghibli-sky transition-colors duration-300"
+      >
         <div className="flex flex-row justify-evenly items-center">
           <div className="text-left">
             <p className="text-md text-ghibli-white font-semibold">
@@ -45,7 +65,7 @@ export const FilmCard = ({ film }: FilmCardProps) => {
             film.running_time
           )}`}
         </p>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
