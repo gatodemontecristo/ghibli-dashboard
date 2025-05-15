@@ -1,19 +1,32 @@
 "use client";
 
 import { sorterOptions } from "@/src/constants/general";
-import React, { useState } from "react";
+import { setFilters } from "@/src/store/filters/filters";
+import { useAppDispatch, useAppSelector } from "@/src/store/hooks";
+import React from "react";
 import { FiChevronDown } from "react-icons/fi";
 
 export const SorterFilter = () => {
-  const [selected, setSelected] = useState<string>(sorterOptions[0].value);
+  // const [selected, setSelected] = useState<string>(sorterOptions[0].value);
 
+  const dispatch = useAppDispatch();
+  const filterObject = useAppSelector((state) => state.filter.filterObject);
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    // setValue(e.target.value);
+    dispatch(
+      setFilters({
+        ...filterObject,
+        sorter: e.target.value,
+      })
+    );
+  };
   return (
     <div className="w-64 relative">
       <select
         id="studio"
         name="studio"
-        value={selected}
-        onChange={(e) => setSelected(e.target.value)}
+        value={filterObject.sorter}
+        onChange={handleChange}
         className="w-full pl-4 pr-10 py-2  border rounded border-gray-300 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-400 text-ghibli-black truncate text-sm"
       >
         {sorterOptions.map((opt) => (

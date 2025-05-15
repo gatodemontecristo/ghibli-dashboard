@@ -46,9 +46,11 @@ export interface IconTextProps {
   subtitle: string;
 }
 
-export interface DirectorItemsType {
-  img: string;
+export interface DirectorProps {
   director: string;
+}
+export interface DirectorItemsType extends DirectorProps {
+  img: string;
   check: boolean;
 }
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { Providers } from "../store/Providers";
+import { ReduxHydration } from "../store/ReduxHydration";
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -26,7 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${notoSans.className}  antialiased`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <ReduxHydration></ReduxHydration>
+          {children}
+        </Providers>
       </body>
     </html>
   );

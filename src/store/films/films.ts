@@ -29,9 +29,6 @@ const ghibliSlice = createSlice({
       } else {
         state.favorites[id] = ghibli;
       }
-
-      //TODO: No se debe de hacer en Redux
-      //localStorage.setItem('favorite-pokemons', JSON.stringify( state.favorites ) );
     },
   },
 });

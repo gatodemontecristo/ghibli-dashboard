@@ -12,6 +12,15 @@ export const localStorageMiddleware = (state: MiddlewareAPI) => {
         JSON.stringify(ghibli.favorites)
       );
       return;
+    } else if (action.type === "filters/setFilters") {
+      const { filter } = state.getState() as RootState;
+      console.log("action", filter);
+
+      localStorage.setItem(
+        "filter-ghibli-films",
+        JSON.stringify(filter.filterObject)
+      );
+      return;
     }
   };
 };

@@ -1,10 +1,12 @@
 import { configureStore, Middleware } from "@reduxjs/toolkit";
 import ghibliReducer from "./films/films";
+import filterReducer from "./filters/filters";
 import { localStorageMiddleware } from "./middlewares/localStorageMiddleware";
 
 export const store = configureStore({
   reducer: {
     ghibli: ghibliReducer,
+    filter: filterReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(localStorageMiddleware as Middleware),

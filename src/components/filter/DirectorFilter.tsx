@@ -1,12 +1,12 @@
 "use client";
-import { directorItems } from "@/src/constants";
 import { DirectorItemsType } from "@/src/types";
 import React, { useState, useRef, useEffect } from "react";
 import { GoCopy } from "react-icons/go";
-import { nanoid } from "nanoid";
 import Image from "next/image";
 import { FaSearch } from "react-icons/fa";
 import clsx from "clsx";
+import { useAppDispatch, useAppSelector } from "@/src/store/hooks";
+import { setFilters } from "@/src/store/filters/filters";
 
 export const DirectorFilter = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,26 +26,47 @@ export const DirectorFilter = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const [directorList, setDirectorList] =
-    useState<DirectorItemsType[]>(directorItems);
+  const dispatch = useAppDispatch();
+  const filterObject = useAppSelector((state) => state.filter.filterObject);
+  console.log("filterObject", filterObject);
 
+  const { directors } = filterObject;
+  const directorList: DirectorItemsType[] = directors;
+  console.log("directorList", directorList);
   const handleChange = (director: string) => {
-    setDirectorList(
-      directorList.map((item) =>
-        item.director === director ? { ...item, check: !item.check } : item
-      )
-    );
-  };
-
-  const handleSelectAll = () => {
-    setDirectorList(
-      directorList.map((item) => {
-        return { ...item, check: !item.check };
+    dispatch(
+      setFilters({
+        ...filterObject,
+        directors: directorList.map((item) =>
+          item.director === director ? { ...item, check: !item.check } : item
+        ),
       })
     );
   };
 
-  const selectedDirectors = directorList.filter((item) => item.check);
+  const handleSelectAll = () => {
+    dispatch(
+      setFilters({
+        ...filterObject,
+        directors: directorList.map((item) => {
+          return { ...item, check: !item.check };
+        }),
+      })
+    );
+  };
+
+  const selectedDirectors: DirectorItemsType[] = directorList.filter(
+    (item) => item.check
+  );
+  const getPaddingLeft = () => {
+    if (selectedDirectors.length === 0) {
+      return "48px";
+    }
+    if (selectedDirectors.length === 1) {
+      return "64px";
+    }
+    return `${String(60 + selectedDirectors.length * 12)}px`;
+  };
 
   return (
     <div className="relative w-72" ref={containerRef}>
@@ -55,7 +76,7 @@ export const DirectorFilter = () => {
       <span className="absolute left-8 top-1/2 -translate-y-1/2 flex ">
         {selectedDirectors.slice(0, 3).map((item, index) => (
           <Image
-            key={nanoid()}
+            key={item.director}
             src={item.img}
             alt={item.director}
             className={clsx(
@@ -74,11 +95,9 @@ export const DirectorFilter = () => {
         value={selectedDirectors.map((item) => item.director).join(", ")}
         readOnly
         className={clsx(
-          "w-full pr-10 py-2  border rounded border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 text-ghibli-black truncate text-sm",
-          selectedDirectors.length !== 1
-            ? `pl-${10 + selectedDirectors.length * 5}`
-            : "pl-16"
+          "w-full pr-10 py-2  border rounded border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 text-ghibli-black truncate text-sm"
         )}
+        style={{ paddingLeft: getPaddingLeft() }}
       />
       <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer">
         <GoCopy />
@@ -123,7 +142,7 @@ export const DirectorFilter = () => {
                   .includes(searchDirector.toLowerCase())
               )
               .map(({ check, director, img }) => (
-                <label key={nanoid()} className="flex items-center space-x-2">
+                <label key={director} className="flex items-center space-x-2">
                   <input
                     type="checkbox"
                     checked={check}
