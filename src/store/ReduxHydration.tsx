@@ -6,7 +6,6 @@ import { setFilters } from "./filters/filters";
 
 export const ReduxHydration = () => {
   const dispatch = useAppDispatch();
-  console.log("ReduxHydration");
   useEffect(() => {
     const favorites = JSON.parse(
       localStorage.getItem("favorite-ghibli-films") ?? "{}"
