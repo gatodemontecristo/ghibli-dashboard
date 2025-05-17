@@ -1,8 +1,7 @@
 import {
-  BasicButton,
   DetailSection,
-  FavoriteButton,
   IconText,
+  OptionDetail,
   PosterSection,
   Underlinedtitle,
 } from "@/src/components";
@@ -10,8 +9,6 @@ import { GhibliFilms } from "@/src/types";
 import { IconTextProps } from "@/src/types/interfaces";
 import { formatMinutesToTime } from "@/src/utils";
 import { nanoid } from "nanoid";
-import Link from "next/link";
-import { MdNavigateBefore } from "react-icons/md";
 
 export const metadata = {
   title: "Ghibli Films",
@@ -91,15 +88,7 @@ export default async function GhibliDetailPage({
 
   return (
     <div className="flex flex-col flex-wrap  px-10 py-5 w-full justify-center ">
-      <div className="flex flex-row w-full items-center justify-center mb-5 gap-3">
-        <Link href={"/dashboard/films"}>
-          <BasicButton
-            icon={<MdNavigateBefore className="size-5"></MdNavigateBefore>}
-            text="Go back"
-          ></BasicButton>
-        </Link>
-        <FavoriteButton active={false}></FavoriteButton>
-      </div>
+      <OptionDetail film={film}></OptionDetail>
       <div className="flex flex-row w-full">
         <PosterSection
           className="w-1/2"

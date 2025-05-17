@@ -1,3 +1,4 @@
+"use client";
 import { SidebarProps } from "@/src/types";
 import clsx from "clsx";
 import { Itembar } from "./Itembar";
