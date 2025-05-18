@@ -87,7 +87,7 @@ export default async function GhibliDetailPage({
   ];
 
   return (
-    <div className="flex flex-col flex-wrap  px-10 py-5 w-full justify-center ">
+    <div className="flex flex-col flex-wrap  px-10 pt-5 pb-15 w-full justify-center ">
       <OptionDetail film={film}></OptionDetail>
       <div className="flex flex-row w-full">
         <PosterSection

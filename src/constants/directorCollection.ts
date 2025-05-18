@@ -12,13 +12,23 @@ export const directorItems: DirectorItemsType[] = [
     check: true,
   },
   {
-    img: "/director/Gorō Miyazaki.jpg",
+    img: "/director/Gorō Miyazaki.png",
     director: "Gorō Miyazaki",
     check: true,
   },
   {
     img: "/director/Yoshifumi Kondō.png",
     director: "Yoshifumi Kondō",
+    check: true,
+  },
+  {
+    img: "/director/Tomomi Mochizuki.png",
+    director: "Tomomi Mochizuki",
+    check: true,
+  },
+  {
+    img: "/director/Hiroyuki Morita.png",
+    director: "Hiroyuki Morita",
     check: true,
   },
 ];
