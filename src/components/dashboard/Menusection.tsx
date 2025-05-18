@@ -1,6 +1,7 @@
 "use client";
 import { Sidebar, Underlinedtitle } from "@/src/components";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FiAlignJustify } from "react-icons/fi";
 
@@ -8,6 +9,18 @@ export const Menusection = () => {
   const [isOpen, setIsOpen] = useState(false);
   const onClose = () => {
     setIsOpen(!isOpen);
+  };
+  const pathname = usePathname();
+  const getMainPage = () => {
+    if (pathname.includes("main")) {
+      return "Home";
+    } else if (pathname.includes("films")) {
+      return "Movies";
+    } else if (pathname.includes("favorites")) {
+      return "Favorites";
+    } else {
+      return "Detail";
+    }
   };
   return (
     <div className="flex flex-col flex-wrap p-5 items-center justify-start w-full bg-ghibli-pink h-screen">
@@ -23,7 +36,7 @@ export const Menusection = () => {
         </div>
         <Underlinedtitle
           className="h-full"
-          title="Main"
+          title={getMainPage()}
           color="text-ghibli-orange"
           underline="bg-ghibli-orange"
         ></Underlinedtitle>
