@@ -8,12 +8,16 @@ import { InvisibleButton } from "../basic/InvisibleButton";
 import { FaHeart } from "react-icons/fa";
 import { FilmCardProps } from "@/src/types/interfaces";
 import { useFavorite } from "@/src/hooks";
+import { usePathname } from "next/navigation";
 
 export const FilmCard = ({ film }: FilmCardProps) => {
   const { onToggle, isFavorite } = useFavorite({ film });
+  const pathname: string = usePathname();
   return (
     <div className="flex flex-col w-1/4 group cursor-pointer transition-all duration-300 overflow-hidden relative">
-      <Link href={`detail/${film.id}`}>
+      <Link
+        href={{ pathname: `detail/${film.id}`, query: { from: `${pathname}` } }}
+      >
         <Image
           src={film.image}
           alt={film.title}

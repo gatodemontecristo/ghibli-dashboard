@@ -20,7 +20,7 @@ export const FilerSection = () => {
         <SearchInput></SearchInput>
         <button
           onClick={() => handleReset("search")}
-          className="text-sm text-ghibli-sky hover:underline font-semibold"
+          className="text-sm text-ghibli-sky hover:underline font-semibold cursor-pointer"
         >
           Clear all
         </button>
@@ -32,7 +32,7 @@ export const FilerSection = () => {
         </div>
         <button
           onClick={() => handleResetAll()}
-          className="text-sm text-ghibli-sky hover:underline font-semibold"
+          className="text-sm text-ghibli-sky hover:underline font-semibold cursor-pointer"
         >
           Reset filters
         </button>
