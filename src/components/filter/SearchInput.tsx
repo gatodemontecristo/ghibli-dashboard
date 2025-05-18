@@ -1,20 +1,11 @@
 "use client";
 
-import { setFilters } from "@/src/store/filters/filters";
-import { useAppDispatch, useAppSelector } from "@/src/store/hooks";
+import { useSetFilter } from "@/src/hooks";
 import { IoSearchOutline } from "react-icons/io5";
 
 export const SearchInput = () => {
-  const dispatch = useAppDispatch();
-  const filterObject = useAppSelector((state) => state.filter.filterObject);
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(
-      setFilters({
-        ...filterObject,
-        search: e.target.value,
-      })
-    );
-  };
+  const { handleChange, filterObject } = useSetFilter();
+
   return (
     <div className="w-[90%] relative">
       <input
@@ -22,7 +13,7 @@ export const SearchInput = () => {
         id="name"
         name="name"
         value={filterObject.search ?? ""}
-        onChange={handleChange}
+        onChange={(e) => handleChange(e, "search")}
         placeholder="Search for Ghibli movies..."
         className="w-full pl-4 pr-10 py-2  border rounded border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-400 text-ghibli-black truncate text-sm"
       />
