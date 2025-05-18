@@ -8,13 +8,13 @@ import { sortByField } from "@/utils";
 export const useFetchGhibliFilms = () => {
   const [collection, setCollection] = useState<GhibliFilms[]>([]);
 
-  const getDetails = async () => {
+  const getFilms = async () => {
     const newGhibli = await getGhibliFilms();
     setCollection(newGhibli);
   };
 
   useEffect(() => {
-    getDetails();
+    getFilms();
   }, []);
   const filters = useAppSelector((state) => state.filter.filterObject);
   const filtered = collection.filter((movie) => {

@@ -17,3 +17,4 @@ export { OptionDetail } from "./dashboard/OptionDetail";
 export { FilmCollection } from "./dashboard/FilmCollection";
 export { TitlePage } from "./text/TitlePage";
 export { FavoriteCollection } from "./dashboard/FavoriteCollection";
+export { CompleteSection } from "./detail/CompleteSection";
