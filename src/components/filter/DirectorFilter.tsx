@@ -56,6 +56,9 @@ export const DirectorFilter = () => {
     if (selectedDirectors.length === 1) {
       return "64px";
     }
+    if (selectedDirectors.length >= 3) {
+      return "96px";
+    }
     return `${String(60 + selectedDirectors.length * 12)}px`;
   };
 
