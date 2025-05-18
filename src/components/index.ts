@@ -15,3 +15,5 @@ export { FilerSection } from "./filter/FilerSection";
 export { InvisibleButton } from "./basic/InvisibleButton";
 export { OptionDetail } from "./dashboard/OptionDetail";
 export { FilmCollection } from "./dashboard/FilmCollection";
+export { TitlePage } from "./text/TitlePage";
+export { FavoriteCollection } from "./dashboard/FavoriteCollection";
