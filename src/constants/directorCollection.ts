@@ -16,4 +16,9 @@ export const directorItems: DirectorItemsType[] = [
     director: "Gorō Miyazaki",
     check: true,
   },
+  {
+    img: "/director/Yoshifumi Kondō.png",
+    director: "Yoshifumi Kondō",
+    check: true,
+  },
 ];

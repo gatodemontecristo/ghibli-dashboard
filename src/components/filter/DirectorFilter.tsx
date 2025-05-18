@@ -5,14 +5,13 @@ import { GoCopy } from "react-icons/go";
 import Image from "next/image";
 import { FaSearch } from "react-icons/fa";
 import clsx from "clsx";
-import { useAppDispatch, useAppSelector } from "@/src/store/hooks";
-import { setFilters } from "@/src/store/filters/filters";
+import { useSetFilter } from "@/src/hooks";
 
 export const DirectorFilter = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchDirector, setSearchDirector] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
-
+  const { handleChange, filterObject } = useSetFilter();
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -26,32 +25,24 @@ export const DirectorFilter = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const dispatch = useAppDispatch();
-  const filterObject = useAppSelector((state) => state.filter.filterObject);
-  console.log("filterObject", filterObject);
-
   const { directors } = filterObject;
   const directorList: DirectorItemsType[] = directors;
-  console.log("directorList", directorList);
-  const handleChange = (director: string) => {
-    dispatch(
-      setFilters({
-        ...filterObject,
-        directors: directorList.map((item) =>
-          item.director === director ? { ...item, check: !item.check } : item
-        ),
-      })
+
+  const handleChangeDirector = (director: string) => {
+    handleChange(
+      directorList.map((item) =>
+        item.director === director ? { ...item, check: !item.check } : item
+      ),
+      "directors"
     );
   };
 
   const handleSelectAll = () => {
-    dispatch(
-      setFilters({
-        ...filterObject,
-        directors: directorList.map((item) => {
-          return { ...item, check: !item.check };
-        }),
-      })
+    handleChange(
+      directorList.map((item) => {
+        return { ...item, check: true };
+      }),
+      "directors"
     );
   };
 
@@ -146,7 +137,7 @@ export const DirectorFilter = () => {
                   <input
                     type="checkbox"
                     checked={check}
-                    onChange={() => handleChange(director)}
+                    onChange={() => handleChangeDirector(director)}
                     className="h-4 w-4 text-ghibli-blue border-gray-300 rounded"
                   />
                   <Image
