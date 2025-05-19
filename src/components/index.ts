@@ -18,3 +18,4 @@ export { FilmCollection } from "./dashboard/FilmCollection";
 export { TitlePage } from "./text/TitlePage";
 export { FavoriteCollection } from "./dashboard/FavoriteCollection";
 export { CompleteSection } from "./detail/CompleteSection";
+export { NotFound } from "./not-found/NotFound";

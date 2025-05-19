@@ -4,6 +4,7 @@ import React from "react";
 import { FilmCard } from "../card/FilmCard";
 import { nanoid } from "nanoid";
 import { TitlePage } from "../text/TitlePage";
+import { NotFound } from "../not-found/NotFound";
 
 export const FavoriteCollection = () => {
   const favorites = useAppSelector((state) => state.ghibli.favorites);
@@ -17,9 +18,16 @@ export const FavoriteCollection = () => {
           className="text-2xl font-bold text-center"
         ></TitlePage>
       </div>
-      {Object.values(favorites).map((film) => (
-        <FilmCard key={nanoid()} film={film}></FilmCard>
-      ))}
+      {Object.values(favorites).length === 0 || !favorites ? (
+        <NotFound
+          title="Ups!"
+          description="No favorite Ghibli movies found"
+        ></NotFound>
+      ) : (
+        Object.values(favorites).map((film) => (
+          <FilmCard key={nanoid()} film={film}></FilmCard>
+        ))
+      )}
     </div>
   );
 };
