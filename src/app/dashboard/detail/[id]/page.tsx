@@ -1,5 +1,6 @@
 import { CompleteSection } from "@/src/components";
 import { getGhibliDetail } from "@/src/helpers";
+import { notFound } from "next/navigation";
 
 import { Metadata } from "next";
 
@@ -28,6 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function GhibliDetailPage({ params }: Props) {
   const { id } = await params;
   const film = await getGhibliDetail(id);
+  if (!film || Object.keys(film).length === 0) {
+    notFound();
+  }
 
   return (
     <div className="flex flex-col flex-wrap  px-10 pt-5 pb-15 w-full justify-center ">

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getGhibliFilms } from "../helpers";
 import { GhibliFilms } from "../types";
 import { useAppSelector } from "../store/hooks";
-import { sortByField } from "@/utils";
+import { sortByField } from "../utils";
 
 export const useFetchGhibliFilms = () => {
   const [collection, setCollection] = useState<GhibliFilms[]>([]);

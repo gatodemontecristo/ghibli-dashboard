@@ -1,5 +1,5 @@
 import { GhibliFilms } from "../types";
-
+import { notFound } from "next/navigation";
 export const getGhibliDetail = async (id: string): Promise<GhibliFilms> => {
   try {
     const film: GhibliFilms = await fetch(
@@ -10,10 +10,9 @@ export const getGhibliDetail = async (id: string): Promise<GhibliFilms> => {
         },
       }
     ).then((resp) => resp.json());
-
     return film;
   } catch (error) {
     console.log(error);
-    throw new Error("Failed to fetch Ghibli film details");
+    notFound();
   }
 };
