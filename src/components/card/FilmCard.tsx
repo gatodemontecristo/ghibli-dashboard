@@ -14,7 +14,7 @@ export const FilmCard = ({ film }: FilmCardProps) => {
   const { onToggle, isFavorite } = useFavorite({ film });
   const pathname: string = usePathname();
   return (
-    <div className="flex flex-col w-1/4 group cursor-pointer transition-all duration-300 overflow-hidden relative">
+    <div className="flex flex-col w-1/4 group cursor-pointer transition-all duration-300 overflow-hidden relative animate__animated animate__fadeInUp">
       <Link
         href={{ pathname: `detail/${film.id}`, query: { from: `${pathname}` } }}
       >

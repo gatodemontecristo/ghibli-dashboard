@@ -3,6 +3,7 @@ import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { Providers } from "../store/Providers";
 import { ReduxHydration } from "../store/ReduxHydration";
+import "animate.css";
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
