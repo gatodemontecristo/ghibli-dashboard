@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
 interface PosterSectionProps {
@@ -11,13 +12,13 @@ export const PosterSection = ({
   altImage,
 }: PosterSectionProps) => {
   return (
-    <div className={className}>
+    <div className={clsx("overflow-hidden", className)}>
       <Image
         src={srcImage}
         alt={altImage}
         width={200}
         height={200}
-        className="object-cover w-full "
+        className="w-full object-cover transform transition-transform duration-300 hover:scale-105 "
       ></Image>
     </div>
   );
