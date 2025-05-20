@@ -17,7 +17,6 @@ export const localStorageMiddleware = (state: MiddlewareAPI) => {
       return;
     } else if (setFilters.match(action)) {
       const { filter } = state.getState() as RootState;
-      console.log("action", filter);
 
       localStorage.setItem(
         "filter-ghibli-films",

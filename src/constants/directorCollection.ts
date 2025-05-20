@@ -31,4 +31,14 @@ export const directorItems: DirectorItemsType[] = [
     director: "Hiroyuki Morita",
     check: true,
   },
+  {
+    img: "/director/Hiromasa Yonebayashi.png",
+    director: "Hiromasa Yonebayashi",
+    check: true,
+  },
+  {
+    img: "/director/Michaël Dudok de Wit.png",
+    director: "Michaël Dudok de Wit",
+    check: true,
+  },
 ];
