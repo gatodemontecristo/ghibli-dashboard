@@ -9,15 +9,15 @@ interface NotFoundProps {
 // It is used in the dashboard and in the app
 export const NotFound = ({ title, description }: NotFoundProps) => {
   return (
-    <div className="flex flex-col flex-wrap gap-4 px-10 pt-5 pb-15 w-full justify-center text-center items-center">
+    <div className="flex flex-col flex-wrap gap-4 md:px-10 px-5 pt-5 pb-15 w-full justify-center text-center items-center">
       <Image
         src="/ghibli-help/kumiko.webp"
         alt="Kumiko upset"
-        className="w-1/4 object-cover "
+        className="md:w-1/4 w-2/4 object-cover "
         width={100}
         height={100}
       ></Image>
-      <div className="flex flex-col gap-1 w-2/5">
+      <div className="flex flex-col gap-1 md:w-2/5 w-4/5">
         <h1 className="text-3xl font-bold text-ghibli-sky">{title}</h1>
         <h2 className="text-xl font-semibold text-ghibli-sky">{description}</h2>
         <p className="text-lg text-ghibli-sky">

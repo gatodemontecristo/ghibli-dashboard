@@ -7,10 +7,11 @@ export const Underlinedtitle = ({
   className,
   color = "text-ghibli-white",
   underline = "bg-ghibli-white",
+  textSize = "text-2xl",
 }: UnderlinedtitleProps) => {
   return (
     <div className={clsx("flex flex-col", className)}>
-      <p className={clsx("text-2xl font-bold", color)}>{title}</p>
+      <p className={clsx("font-bold", color, textSize)}>{title}</p>
       <div className={clsx(" w-[80px] h-[5px]", underline)}></div>
     </div>
   );

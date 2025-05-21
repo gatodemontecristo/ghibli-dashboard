@@ -13,7 +13,7 @@ export const DetailSection = ({
   return (
     <div
       className={clsx(
-        "relative overflow-hidden  px-10 py-5 flex flex-col justify-center items-start gap-3 ",
+        "relative overflow-hidden  px-10 md:py-5 py-10 flex flex-col justify-center items-start gap-3 ",
         className
       )}
     >

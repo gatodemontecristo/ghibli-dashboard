@@ -26,10 +26,10 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
               height={100}
             />
             <div className="flex flex-col gap-1 w-full text-left">
-              <p className="text-4xl text-ghibli-white font-semibold">
+              <p className="md:text-4xl text-3xl text-ghibli-white font-semibold">
                 Studio Ghibli
               </p>
-              <p className="text-2xl text-ghibli-white italic font-light">
+              <p className="md:text-2xl text-xl text-ghibli-white italic font-light">
                 スタジオジブリ
               </p>
             </div>
