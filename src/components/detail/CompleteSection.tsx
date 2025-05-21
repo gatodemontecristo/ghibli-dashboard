@@ -62,26 +62,32 @@ export const CompleteSection = ({ film }: { film: GhibliFilms }) => {
   return (
     <>
       <OptionDetail film={film}></OptionDetail>
-      <div className="flex flex-row w-full">
+      <div className="flex md:flex-row flex-col w-full">
         <PosterSection
-          className="w-1/2 animate__animated animate__fadeInLeft"
+          className="md:w-1/2 w-full animate__animated animate__fadeInLeft"
           srcImage={film.movie_banner}
           altImage="Ghibli Banner"
         ></PosterSection>
         <DetailSection
-          className="w-1/2 bg-ghibli-blue animate__animated animate__fadeInRight"
+          className="md:w-1/2 w-full bg-ghibli-blue animate__animated animate__fadeInRight"
           src="/ghibli-wallpaper/wallpaperbanner.webp"
         >
-          <Underlinedtitle title={film.title}></Underlinedtitle>
+          <Underlinedtitle
+            textSize="text-xl"
+            title={film.title}
+          ></Underlinedtitle>
           <p className="text-ghibli-white line-clamp-6">{film.description}</p>
         </DetailSection>
       </div>
-      <div className="flex flex-row w-full">
+      <div className="flex md:flex-row flex-col w-full">
         <DetailSection
-          className="w-1/3 bg-[#0987cb] animate__animated animate__fadeInLeft"
+          className="md:w-1/3 w-full bg-[#0987cb] animate__animated animate__fadeInLeft"
           src="/ghibli-wallpaper/wallpaper01.jpg"
         >
-          <Underlinedtitle title="Features"></Underlinedtitle>
+          <Underlinedtitle
+            textSize="text-xl"
+            title="Features"
+          ></Underlinedtitle>
 
           {featureSection.map((item) => (
             <IconText key={nanoid()} {...item}></IconText>
@@ -89,16 +95,16 @@ export const CompleteSection = ({ film }: { film: GhibliFilms }) => {
         </DetailSection>
 
         <PosterSection
-          className="w-1/3 animate__fadeInUp animate__animated"
+          className="md:w-1/3 w-full animate__fadeInUp animate__animated"
           srcImage={film.image}
           altImage="Ghibli Poster"
         ></PosterSection>
 
         <DetailSection
-          className="w-1/3 bg-[#2cadf4] animate__animated animate__fadeInRight"
+          className="md:w-1/3 w-full bg-[#2cadf4] animate__animated animate__fadeInRight"
           src="/ghibli-wallpaper/wallpaper02.jpg"
         >
-          <Underlinedtitle title="Extras"></Underlinedtitle>
+          <Underlinedtitle textSize="text-xl" title="Extras"></Underlinedtitle>
 
           {extraSection.map((item) => (
             <IconText key={nanoid()} {...item}></IconText>

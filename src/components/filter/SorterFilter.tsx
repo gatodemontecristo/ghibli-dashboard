@@ -9,7 +9,7 @@ export const SorterFilter = () => {
   const { handleChange, filterObject } = useSetFilter();
 
   return (
-    <div className="w-64 relative">
+    <div className="md:w-64 w-56 relative">
       <select
         id="studio"
         name="studio"

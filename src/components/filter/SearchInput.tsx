@@ -7,7 +7,7 @@ export const SearchInput = () => {
   const { handleChange, filterObject } = useSetFilter();
 
   return (
-    <div className="w-[90%] relative">
+    <div className="md:w-[90%] w-[80%] relative">
       <input
         type="text"
         id="name"

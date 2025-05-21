@@ -37,6 +37,7 @@ export interface UnderlinedtitleProps {
   className?: string;
   color?: string;
   underline?: string;
+  textSize?: string;
 }
 export interface IconTextProps {
   srcImg: string;

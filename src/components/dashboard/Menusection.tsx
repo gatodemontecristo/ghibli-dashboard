@@ -1,5 +1,6 @@
 "use client";
 import { Sidebar, Underlinedtitle } from "@/src/components";
+import clsx from "clsx";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -22,29 +23,39 @@ export const Menusection = () => {
       return "Detail";
     }
   };
+  const isDashboard = pathname === "/dashboard/main";
+
   return (
-    <div className="flex flex-col flex-wrap p-5 items-center justify-start w-full bg-ghibli-pink h-screen">
-      <div className="flex flex-col gap-2 h-full">
-        <div>
+    <div
+      className={clsx(
+        "flex md:flex-col flex-row flex-wrap p-5 items-center justify-start md:w-full w-screen md:bg-ghibli-pink h-full z-50",
+        isDashboard ? "bg-transparent" : "bg-ghibli-blue"
+      )}
+    >
+      <div className="flex md:flex-col flex-row gap-2 md:h-full h-auto md:w-full w-screen md:items-baseline items-center">
+        <div className="h-full md:gap-2 gap-3 flex md:flex-col flex-row w-full">
           <button
             onClick={onClose}
             type="button"
-            className="bg-ghibli-orange  hover:bg-[#ff722a] text-2xl active:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
+            className="bg-ghibli-orange w-fit h-fit hover:bg-[#ff722a] text-2xl active:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
           >
             <FiAlignJustify />
           </button>
-        </div>
-        <Underlinedtitle
-          className="h-full"
-          title={getMainPage()}
-          color="text-ghibli-orange"
-          underline="bg-ghibli-orange"
-        ></Underlinedtitle>
 
+          <Underlinedtitle
+            title={getMainPage()}
+            color={`md:text-ghibli-orange ${
+              isDashboard ? "text-ghibli-white" : "text-ghibli-white"
+            }`}
+            underline={`md:bg-ghibli-orange ${
+              isDashboard ? "bg-ghibli-white" : "bg-ghibli-white"
+            }`}
+          ></Underlinedtitle>
+        </div>
         <Image
           src="/ghibli-web/mei.png"
           alt="ghibli-title"
-          className="w-15 h-20  object-cover"
+          className="md:w-15 w-12 md:h-20 h-16  object-cover"
           width={100}
           height={100}
         />

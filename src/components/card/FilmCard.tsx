@@ -7,14 +7,15 @@ import Link from "next/link";
 import { InvisibleButton } from "../basic/InvisibleButton";
 import { FaHeart } from "react-icons/fa";
 import { FilmCardProps } from "@/src/types/interfaces";
-import { useFavorite } from "@/src/hooks";
+import { useFavorite, useIsMobile } from "@/src/hooks";
 import { usePathname } from "next/navigation";
 
 export const FilmCard = ({ film }: FilmCardProps) => {
   const { onToggle, isFavorite } = useFavorite({ film });
   const pathname: string = usePathname();
+  const isMobile = useIsMobile();
   return (
-    <div className="flex flex-col w-1/4 group cursor-pointer transition-all duration-300 overflow-hidden relative animate__animated animate__fadeInUp">
+    <div className="flex flex-col md:w-1/4 w-[40%] group cursor-pointer transition-all duration-300 overflow-hidden relative animate__animated animate__fadeInUp">
       <Link
         href={{ pathname: `detail/${film.id}`, query: { from: `${pathname}` } }}
       >
@@ -28,7 +29,7 @@ export const FilmCard = ({ film }: FilmCardProps) => {
       </Link>
       <InvisibleButton
         className="absolute right-4 top-0 z-index-20"
-        icon={<FaHeart className="size-6" />}
+        icon={<FaHeart className="md:size-6 size-5" />}
         onClick={onToggle}
         active={isFavorite}
       ></InvisibleButton>
@@ -38,20 +39,20 @@ export const FilmCard = ({ film }: FilmCardProps) => {
       >
         <div className="flex flex-row justify-evenly items-center">
           <div className="text-left">
-            <p className="text-md text-ghibli-white font-semibold">
+            <p className="md:text-base text-sm text-ghibli-white font-semibold">
               {film.title}
             </p>
-            <p className="text-sm text-ghibli-white italic font-light">
+            <p className="md:text-sm text-xs text-ghibli-white italic font-light">
               {film.original_title}
             </p>
-            <p className="text-sm text-ghibli-white font-bold">
+            <p className="md:text-sm text-xs text-ghibli-white font-bold">
               {film.original_title_romanised}
             </p>
           </div>
           <CircleRating
             score={Number(film.rt_score)}
-            size={70}
-            strokeWidth={8}
+            size={isMobile ? 50 : 70}
+            strokeWidth={isMobile ? 6 : 8}
           />
         </div>
         <p className="text-xs text-ghibli-white ">

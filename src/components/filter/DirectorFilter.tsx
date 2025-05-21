@@ -63,7 +63,7 @@ export const DirectorFilter = () => {
   };
 
   return (
-    <div className="relative w-72" ref={containerRef}>
+    <div className="relative md:w-72 w-[100%]" ref={containerRef}>
       <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
         <GoCopy />
       </span>

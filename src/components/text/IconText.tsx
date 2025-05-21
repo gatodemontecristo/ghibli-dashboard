@@ -23,15 +23,15 @@ export const IconText = ({
         ></Image>
       );
     return srcImg === "year" ? (
-      <FiCalendar className="w-10 h-10 text-white" />
+      <FiCalendar className="md:w-10 w-8 md:h-10 h-8 text-white" />
     ) : (
-      <FiClock className="w-10 h-10 text-white" />
+      <FiClock className="md:w-10 w-8 md:h-10 h-8 text-white" />
     );
   };
   return (
     <div className="flex flex-row gap-2 items-center">
       {getImg()}
-      <p className="text-xl  text-ghibli-white">
+      <p className="md:text-xl text-lg  text-ghibli-white">
         <span className=" font-extrabold">{title}:</span> {subtitle}
       </p>
     </div>

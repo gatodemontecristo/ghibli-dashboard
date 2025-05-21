@@ -21,7 +21,10 @@ export const Itemextra = ({
         height={100}
       />
       <div className="flex flex-col">
-        <h3 className="text-lg font-semibold text-gray-200"> {title}</h3>
+        <h3 className="md:text-lg text-base font-semibold text-gray-200">
+          {" "}
+          {title}
+        </h3>
         <h2 className="text-base font-normal text-gray-200 group-hover:text-ghibli-orange group-hover:translate-x-2 transition-all duration-200">
           {secondary}
         </h2>
