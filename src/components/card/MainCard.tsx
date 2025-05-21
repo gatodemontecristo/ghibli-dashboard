@@ -13,7 +13,7 @@ export const MainCard = ({
   children,
 }: MainCardProps) => {
   return (
-    <div className="flex flex-col gap-2 w-1/2 justify-center items-center">
+    <div className="flex flex-col gap-2 md:w-1/2 w-2/3 justify-center items-center">
       <MainCardLogo image={image}></MainCardLogo>
       <MainCardTile title={title}></MainCardTile>
       <MainCardSecondary secondary={secondary}></MainCardSecondary>
@@ -29,7 +29,7 @@ export const MainCardLogo = ({ image }: { image: ImageProps }) => {
     <Image
       src={image.src}
       alt={image.alt}
-      className="w-70 animate__bounceIn animate__animated "
+      className="w-60 md:w-70 animate__bounceIn animate__animated "
       width={100}
       height={100}
     ></Image>
@@ -38,14 +38,18 @@ export const MainCardLogo = ({ image }: { image: ImageProps }) => {
 
 export const MainCardTile = ({ title }: { title: string }) => {
   return (
-    <h2 className={clsx("text-2xl font-extrabold text-ghibli-white")}>
+    <h2
+      className={clsx("text-xl md:text-2xl  font-extrabold text-ghibli-white ")}
+    >
       {title}
     </h2>
   );
 };
 export const MainCardSecondary = ({ secondary }: { secondary: string }) => {
   return (
-    <p className={clsx("text-xl font-light italic text-ghibli-white")}>
+    <p
+      className={clsx("text-lg md:text-xl font-light italic text-ghibli-white")}
+    >
       {secondary}
     </p>
   );
