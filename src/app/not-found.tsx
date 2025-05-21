@@ -18,8 +18,8 @@ export default function NotFound() {
                 src="/ghibli-help/totoro.png"
                 alt="Totoro image not found"
                 className="w-70 animate__bounceIn animate__animated"
-                width={100}
-                height={100}
+                width={300}
+                height={300}
               ></Image>
               <p className="font-bold text-9xl text-ghibli-black">4</p>
             </div>

@@ -16,8 +16,8 @@ export const PosterSection = ({
       <Image
         src={srcImage}
         alt={altImage}
-        width={200}
-        height={200}
+        width={300}
+        height={300}
         className="w-full object-cover transform transition-transform duration-300 hover:scale-105 "
       ></Image>
     </div>

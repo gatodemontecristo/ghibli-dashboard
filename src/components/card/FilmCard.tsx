@@ -22,9 +22,9 @@ export const FilmCard = ({ film }: FilmCardProps) => {
         <Image
           src={film.image}
           alt={film.title}
-          className="w-full object-cover transform transition-transform duration-300 group-hover:scale-105 "
-          width={100}
-          height={100}
+          className=" object-cover transform transition-transform duration-300 group-hover:scale-105 "
+          width={300}
+          height={300}
         />
       </Link>
       <InvisibleButton

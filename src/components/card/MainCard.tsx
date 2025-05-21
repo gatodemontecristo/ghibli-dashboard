@@ -30,8 +30,8 @@ export const MainCardLogo = ({ image }: { image: ImageProps }) => {
       src={image.src}
       alt={image.alt}
       className="w-60 md:w-70 animate__bounceIn animate__animated "
-      width={100}
-      height={100}
+      width={300}
+      height={300}
     ></Image>
   );
 };
