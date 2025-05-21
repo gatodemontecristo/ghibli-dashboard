@@ -5,11 +5,17 @@ interface TitlePageProps {
   colorText?: string;
   normalText?: string;
   className?: string;
+  image: string;
+  alt: string;
+  classImg?: string;
 }
 export const TitlePage = ({
   colorText,
   normalText,
   className,
+  image,
+  alt,
+  classImg = "w-10 h-10",
 }: TitlePageProps) => {
   return (
     <div className="flex flex-row w-3/4 justify-between items-center px-2">
@@ -18,9 +24,9 @@ export const TitlePage = ({
         {normalText}
       </p>
       <Image
-        src={"/ghibli-web/peanut.svg"}
-        alt={"peanut"}
-        className="w-8 h-8 "
+        src={image}
+        alt={alt}
+        className={classImg}
         width={100}
         height={100}
       ></Image>

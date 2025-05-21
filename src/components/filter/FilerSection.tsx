@@ -14,6 +14,8 @@ export const FilerSection = () => {
       <TitlePage
         colorText={`${sortered.length} Ghibli films`}
         normalText="have been found"
+        image="/ghibli-web/peanut.svg"
+        alt="peanut"
       ></TitlePage>
 
       <div className="flex flex-row w-3/4 justify-between items-center">
