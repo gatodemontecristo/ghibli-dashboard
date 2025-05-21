@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function GhibliFilmsPage() {
   return (
-    <div className="flex flex-col aling-top w-full">
+    <div className="flex flex-col aling-top w-full md:mt-0 mt-20">
       <FilerSection></FilerSection>
       <FilmCollection></FilmCollection>
     </div>

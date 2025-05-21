@@ -10,7 +10,7 @@ export const FilerSection = () => {
   const { handleReset, handleResetAll } = useSetFilter();
 
   return (
-    <div className="flex flex-col gap-2 px-15 py-10 w-full justify-center items-center">
+    <div className="flex flex-col gap-2 md:px-15 px-5 py-10 w-full justify-center items-center">
       <TitlePage
         colorText={`${sortered.length} Ghibli films`}
         normalText="have been found"
@@ -18,7 +18,7 @@ export const FilerSection = () => {
         alt="peanut"
       ></TitlePage>
 
-      <div className="flex flex-row w-3/4 justify-between items-center">
+      <div className="flex flex-row md:w-3/4 w-full justify-between items-center">
         <SearchInput></SearchInput>
         <button
           onClick={() => handleReset("search")}
@@ -27,8 +27,8 @@ export const FilerSection = () => {
           Clear all
         </button>
       </div>
-      <div className="flex flex-row w-3/4 justify-between items-center">
-        <div className="flex flex-row gap-2 ">
+      <div className="flex flex-row md:w-3/4 w-full justify-between items-center">
+        <div className="flex md:flex-row flex-col gap-2 ">
           <DirectorFilter></DirectorFilter>
           <SorterFilter></SorterFilter>
         </div>

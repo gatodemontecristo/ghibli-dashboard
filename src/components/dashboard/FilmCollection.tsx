@@ -8,7 +8,7 @@ export const FilmCollection = () => {
   const { sortered } = useFetchGhibliFilms();
 
   return (
-    <div className="flex flex-row flex-wrap gap-4 px-10 pt-5 pb-15 w-full justify-center ">
+    <div className="flex flex-row flex-wrap md:gap-4 gap-2 md:px-10 px-0 pt-5 pb-15 w-full justify-center ">
       {sortered.length === 0 || !sortered ? (
         <NotFound title="Ups!" description="No Ghibli movies found"></NotFound>
       ) : (
