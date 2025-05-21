@@ -16,6 +16,9 @@ export const FavoriteCollection = () => {
           colorText={`${Object.values(favorites).length} Ghibli films`}
           normalText="are your favorites"
           className="text-2xl font-bold text-center"
+          image="/ghibli-web/train.png"
+          alt="train"
+          classImg="w-20 h-20"
         ></TitlePage>
       </div>
       {Object.values(favorites).length === 0 || !favorites ? (

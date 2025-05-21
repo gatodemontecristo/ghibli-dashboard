@@ -64,12 +64,12 @@ export const CompleteSection = ({ film }: { film: GhibliFilms }) => {
       <OptionDetail film={film}></OptionDetail>
       <div className="flex flex-row w-full">
         <PosterSection
-          className="w-1/2"
+          className="w-1/2 animate__animated animate__fadeInLeft"
           srcImage={film.movie_banner}
           altImage="Ghibli Banner"
         ></PosterSection>
         <DetailSection
-          className="w-1/2 bg-ghibli-blue "
+          className="w-1/2 bg-ghibli-blue animate__animated animate__fadeInRight"
           src="/ghibli-wallpaper/wallpaperbanner.webp"
         >
           <Underlinedtitle title={film.title}></Underlinedtitle>
@@ -78,7 +78,7 @@ export const CompleteSection = ({ film }: { film: GhibliFilms }) => {
       </div>
       <div className="flex flex-row w-full">
         <DetailSection
-          className="w-1/3 bg-[#0987cb]"
+          className="w-1/3 bg-[#0987cb] animate__animated animate__fadeInLeft"
           src="/ghibli-wallpaper/wallpaper01.jpg"
         >
           <Underlinedtitle title="Features"></Underlinedtitle>
@@ -89,13 +89,13 @@ export const CompleteSection = ({ film }: { film: GhibliFilms }) => {
         </DetailSection>
 
         <PosterSection
-          className="w-1/3"
+          className="w-1/3 animate__fadeInUp animate__animated"
           srcImage={film.image}
           altImage="Ghibli Poster"
         ></PosterSection>
 
         <DetailSection
-          className="w-1/3 bg-[#2cadf4]"
+          className="w-1/3 bg-[#2cadf4] animate__animated animate__fadeInRight"
           src="/ghibli-wallpaper/wallpaper02.jpg"
         >
           <Underlinedtitle title="Extras"></Underlinedtitle>

@@ -29,7 +29,7 @@ export const MainCardLogo = ({ image }: { image: ImageProps }) => {
     <Image
       src={image.src}
       alt={image.alt}
-      className="w-70"
+      className="w-70 animate__bounceIn animate__animated "
       width={100}
       height={100}
     ></Image>
