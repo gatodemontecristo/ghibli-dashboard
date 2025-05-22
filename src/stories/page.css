@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+  --font-noto-ghibli: var(--font-noto-sans), "sans-serif";
+  --color-ghibli-white: #ffffff;
+  --color-ghibli-blue: #0d9ceb;
+  --color-ghibli-sky: #05afbe;
+  --color-ghibli-orange: #ee6a27;
+  --color-ghibli-black: #211816;
+  --color-ghibli-pink: #fefdf5;
+}
 .storybook-page {
   margin: 0 auto;
   padding: 48px 20px;

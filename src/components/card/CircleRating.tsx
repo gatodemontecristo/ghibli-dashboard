@@ -20,9 +20,6 @@ export const CircleRating: React.FC<CircleRatingProps> = ({
   const offset = circumference - (score / 100) * circumference;
 
   const getColor = () => {
-    // if (score >= 75) return "stroke-ghibli-white";
-    // if (score >= 50) return "stroke-yellow-400";
-    // return "stroke-red-500";
     return "stroke-ghibli-white";
   };
 
