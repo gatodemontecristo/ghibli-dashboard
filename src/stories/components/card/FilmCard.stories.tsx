@@ -41,7 +41,7 @@ const mockFilm = {
 };
 
 const meta: Meta<typeof FilmCard> = {
-  title: "Components/FilmCard",
+  title: "Components/card/FilmCard",
   decorators: [withReduxDecorator],
   component: FilmCard,
   tags: ["autodocs"],

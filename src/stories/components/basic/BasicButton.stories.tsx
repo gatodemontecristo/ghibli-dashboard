@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { GiJapan } from "react-icons/gi";
 
 const meta: Meta<typeof BasicButton> = {
-  title: "Components/BasicButton",
+  title: "Components/basic/BasicButton",
   component: BasicButton,
   tags: ["autodocs"],
   parameters: {

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { FaStar } from "react-icons/fa";
 
 const meta: Meta<typeof InvisibleButton> = {
-  title: "Components/InvisibleButton",
+  title: "Components/basic/InvisibleButton",
   component: InvisibleButton,
   tags: ["autodocs"],
   parameters: {

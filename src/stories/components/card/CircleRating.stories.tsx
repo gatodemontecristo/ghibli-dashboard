@@ -2,7 +2,7 @@ import { CircleRating } from "@/src/components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof CircleRating> = {
-  title: "Components/CircleRating",
+  title: "Components/card/CircleRating",
   component: CircleRating,
   tags: ["autodocs"],
   parameters: {
