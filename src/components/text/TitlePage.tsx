@@ -27,8 +27,8 @@ export const TitlePage = ({
         src={image}
         alt={alt}
         className={classImg}
-        width={100}
-        height={100}
+        width={150}
+        height={150}
       ></Image>
     </div>
   );

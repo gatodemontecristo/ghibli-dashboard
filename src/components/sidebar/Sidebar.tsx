@@ -22,8 +22,8 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
               src="/ghibli-icon.png"
               alt="ghibli-title"
               className="w-8 h-8  object-cover"
-              width={100}
-              height={100}
+              width={150}
+              height={150}
             />
             <div className="flex flex-col gap-1 w-full text-left">
               <p className="md:text-4xl text-3xl text-ghibli-white font-semibold">

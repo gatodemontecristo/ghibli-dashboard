@@ -13,8 +13,8 @@ export const Itembar = ({ img, title, path }: ItembarProps) => {
         src={img}
         alt={"ghibli-" + title}
         className="w-15 h-15  object-cover"
-        width={100}
-        height={100}
+        width={150}
+        height={150}
       />
       <h2 className="text-xl font-semibold text-gray-200 group-hover:text-ghibli-orange group-hover:translate-x-2 transition-all duration-200">
         {title}

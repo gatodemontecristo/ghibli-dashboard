@@ -17,8 +17,8 @@ export const Itemextra = ({
         src={img}
         alt={"extra-" + title}
         className="w-15 h-15  object-cover"
-        width={100}
-        height={100}
+        width={150}
+        height={150}
       />
       <div className="flex flex-col">
         <h3 className="md:text-lg text-base font-semibold text-gray-200">

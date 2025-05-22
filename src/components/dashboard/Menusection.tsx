@@ -56,8 +56,8 @@ export const Menusection = () => {
           src="/ghibli-web/mei.png"
           alt="ghibli-title"
           className="md:w-15 w-12 md:h-20 h-16  object-cover"
-          width={100}
-          height={100}
+          width={200}
+          height={200}
         />
       </div>
 

@@ -14,8 +14,8 @@ export const NotFound = ({ title, description }: NotFoundProps) => {
         src="/ghibli-help/kumiko.webp"
         alt="Kumiko upset"
         className="md:w-1/4 w-2/4 object-cover "
-        width={100}
-        height={100}
+        width={300}
+        height={300}
       ></Image>
       <div className="flex flex-col gap-1 md:w-2/5 w-4/5">
         <h1 className="text-3xl font-bold text-ghibli-sky">{title}</h1>
