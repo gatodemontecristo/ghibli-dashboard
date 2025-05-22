@@ -9,7 +9,7 @@ import {
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof MainCard> = {
-  title: "Components/MainCard",
+  title: "Components/card/MainCard",
   component: MainCard,
   tags: ["autodocs"],
   parameters: {

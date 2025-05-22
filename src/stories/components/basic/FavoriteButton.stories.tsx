@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { FaStar } from "react-icons/fa";
 
 const meta: Meta<typeof FavoriteButton> = {
-  title: "Components/FavoriteButton",
+  title: "Components/basic/FavoriteButton",
   component: FavoriteButton,
   tags: ["autodocs"],
   parameters: {
