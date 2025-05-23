@@ -16,7 +16,6 @@
     <br />
     <a href="https://ghibliapi.vercel.app"><strong>Explore the API service »</strong></a>
     <br />
-    <br />
     <a href="https://ghibli-dashboard.vercel.app/">View Demo</a>
     &middot;
     <a href="https://trello.com/b/5e7d2glu">Trello dashboard</a>
