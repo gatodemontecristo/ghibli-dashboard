@@ -19,3 +19,4 @@ export { TitlePage } from "./text/TitlePage";
 export { FavoriteCollection } from "./dashboard/FavoriteCollection";
 export { CompleteSection } from "./detail/CompleteSection";
 export { NotFound } from "./not-found/NotFound";
+export { SpeechBubble } from "./text/SpeechBubble";
