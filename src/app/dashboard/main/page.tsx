@@ -4,7 +4,21 @@ import { LuReceiptJapaneseYen } from "react-icons/lu";
 
 export const metadata = {
   title: "Ghibli Dashboard",
-  description: "SEO Title",
+  description: "A beautiful dashboard of Studio Ghibli films",
+  openGraph: {
+    title: "Ghibli Dashboard",
+    description: "A beautiful dashboard of Studio Ghibli films",
+    url: "https://ghibli-dashboard.vercel.app/",
+    type: "website",
+    images: [
+      {
+        url: "https://ghibli-dashboard.vercel.app/preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Preview de la web",
+      },
+    ],
+  },
 };
 export default function MainPage() {
   return (
