@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<a id="readme-top"></a>
 
-## Getting Started
 
-First, run the development server:
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  
+  <img src="/public/totoro.png" alt="Logo" width="80" height="80">
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  <h3 align="center">Ghibli Dashboard - Film Collection</h3>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  <p align="center">
+    A awesome encyclopedia of Zelda Breath of the Wild game resources
+    <br />
+    <a href="https://ghibliapi.vercel.app"><strong>Explore the API service »</strong></a>
+    <br />
+    <br />
+    <a href="https://ghibli-dashboard.vercel.app/">View Demo</a>
+    &middot;
+    <a href="https://trello.com/b/5onCaru4">Trello dashboard</a>
+  </p>
+</div>
 
-## Learn More
+<!-- ABOUT THE PROJECT -->
+## About The Project
+![image](https://github.com/user-attachments/assets/0bd7bf33-7a36-45ec-a37d-dd48b2c96f2b)
 
-To learn more about Next.js, take a look at the following resources:
+Ghibli Dashboard 🌳🍁🐈‍⬛ is a beautifully designed web application that allows users to explore the enchanting world of Studio Ghibli films. The dashboard provides a clean and user-friendly interface to browse through the complete collection of Studio Ghibli movies, offering detailed information about each film, including its title, release date, director, synopsis, and more. Whether you're a long-time fan or new to Studio Ghibli, this application is the perfect way to dive into the magic of these timeless stories.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Film Collection Browser: Explore a complete list of Studio Ghibli films with detailed information about each movie.
+* Favorites Management: Mark your favorite films and manage them easily in a dedicated section.
+* Responsive Design: Fully optimized for both desktop and mobile devices
+* 404 Not Found Page: A custom-designed error page featuring Totoro for unmatched charm.
+* Redux State Management: Efficiently manage application state with Redux Toolkit.
+* Storybook Integration: Preview and test UI components in isolation using Storybook.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Built With
+* ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+* 	![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+* ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+*  	![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)
+* 	![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+* 	![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
