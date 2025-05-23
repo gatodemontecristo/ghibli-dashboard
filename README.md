@@ -19,7 +19,7 @@
     <br />
     <a href="https://ghibli-dashboard.vercel.app/">View Demo</a>
     &middot;
-    <a href="https://trello.com/b/5onCaru4">Trello dashboard</a>
+    <a href="https://trello.com/b/5e7d2glu">Trello dashboard</a>
   </p>
 </div>
 
@@ -45,3 +45,56 @@ Features
 *  	![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)
 * 	![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 * 	![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+
+# Requirements
+
+Before starting, ensure you have the following installed on your system:
+
+* Node.js: Version 16.x or higher. Download it from <a href="https://nodejs.org/en">Node.js</a>.
+* Git: To clone the repository. Download it from <a href="https://git-scm.com/">Git</a>.
+
+  ## Installation Steps
+
+Follow these steps to install and run the project locally:
+
+* Clone the repository: Clone the repository from GitHub to your local machine:
+  
+   ```sh
+  git clone https://github.com/gatodemontecristo/ghibli-dashboard.git
+  cd ghibli-dashboard
+  ```
+* Install dependencies: Install all the necessary dependencies using NPM:
+  
+   ```sh
+  npm install
+  ```
+* Run the development server. Start the development server with the following command:
+
+   ```sh
+  npm run dev
+  ```
+This will start the Next.js development server with Turbopack. Open your browser and navigate to http://localhost:3000 to view the application
+## Additional Commands
+* Run Storybook. To preview and test UI components in isolation using Storybook, run:
+  ```sh
+  npm run storybook
+  ```
+  This will start the Storybook server. Open your browser and navigate to http://localhost:6006.
+
+  <!-- LICENSE -->
+## License
+
+Distributed under the Unlicense License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Erick Yoichi Dejo - https://linkedin.com/in/erick-dejo-vicente-b819601b6
+
+Project Link: https://github.com/gatodemontecristo/ghibli-dashboard
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
