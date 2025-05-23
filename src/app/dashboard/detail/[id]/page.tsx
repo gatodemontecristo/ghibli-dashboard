@@ -34,7 +34,7 @@ export default async function GhibliDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="flex flex-col flex-wrap  md:px-10 px-5 md:pt-5 pt-30 pb-15 w-full justify-center ">
+    <div className="flex flex-col flex-wrap  md:ps-25 md:pe-15 ps-5 pe-5 md:pt-5 pt-30 pb-15 w-full justify-center ">
       <CompleteSection film={film}></CompleteSection>
     </div>
   );

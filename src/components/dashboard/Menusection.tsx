@@ -1,5 +1,5 @@
 "use client";
-import { Sidebar, Underlinedtitle } from "@/src/components";
+import { Sidebar, SpeechBubble, Underlinedtitle } from "@/src/components";
 import clsx from "clsx";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -28,7 +28,7 @@ export const Menusection = () => {
   return (
     <div
       className={clsx(
-        "flex md:flex-col flex-row flex-wrap p-5 items-center justify-start md:w-full w-screen md:bg-ghibli-pink h-full z-50",
+        "flex md:flex-col flex-row flex-wrap p-5 items-center justify-start md:w-full w-screen md:bg-ghibli-black h-full z-50",
         isDashboard ? "bg-transparent" : "bg-ghibli-blue"
       )}
     >
@@ -37,28 +37,37 @@ export const Menusection = () => {
           <button
             onClick={onClose}
             type="button"
-            className="bg-ghibli-orange w-fit h-fit hover:bg-[#ff722a] text-2xl active:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
+            className=" bg-ghibli-orange w-fit h-fit  hover:bg-[#ff722a] text-2xl active:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
           >
             <FiAlignJustify />
           </button>
 
           <Underlinedtitle
             title={getMainPage()}
-            color={`md:text-ghibli-orange ${
+            color={`md:text-ghibli-white ${
               isDashboard ? "text-ghibli-white" : "text-ghibli-white"
             }`}
-            underline={`md:bg-ghibli-orange ${
+            underline={`md:bg-ghibli-white ${
               isDashboard ? "bg-ghibli-white" : "bg-ghibli-white"
             }`}
           ></Underlinedtitle>
         </div>
-        <Image
-          src="/ghibli-web/mei.png"
-          alt="ghibli-title"
-          className="md:w-15 w-12 md:h-20 h-16  object-cover"
-          width={200}
-          height={200}
-        />
+
+        <div className="relative">
+          <SpeechBubble
+            text="Give me a star if you liked my work!"
+            href="https://github.com/gatodemontecristo/ghibli-dashboard"
+            atext="Check my code"
+            position="bottom"
+          />
+          <Image
+            src="/ghibli-web/mei.png"
+            alt="ghibli-title"
+            className="md:w-15 w-12 md:h-20 h-16  object-cover"
+            width={200}
+            height={200}
+          />
+        </div>
       </div>
 
       <Sidebar {...{ onClose, isOpen }}></Sidebar>
