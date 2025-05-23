@@ -27,7 +27,7 @@ export const SpeechBubble = ({
   return (
     <div
       className={clsx(
-        " bg-ghibli-white absolute  text-ghibli-black p-2 rounded-full shadow-xl w-[260px] -top-20 border-dashed border-3 border-ghibli-orange",
+        " bg-ghibli-white absolute text-center text-ghibli-black p-2 rounded-full border-dashed border-3 border-ghibli-orange",
         "after:content-[''] after:absolute after:w-0 after:h-0 after:border-[10px] after:border-transparent",
         tailPosition[position],
         className

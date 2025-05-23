@@ -1,5 +1,6 @@
 "use client";
 import { Sidebar, SpeechBubble, Underlinedtitle } from "@/src/components";
+import { useIsMobile } from "@/src/hooks";
 import clsx from "clsx";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -24,7 +25,7 @@ export const Menusection = () => {
     }
   };
   const isDashboard = pathname === "/dashboard/main";
-
+  const isMobile = useIsMobile();
   return (
     <div
       className={clsx(
@@ -53,12 +54,18 @@ export const Menusection = () => {
           ></Underlinedtitle>
         </div>
 
-        <div className="relative">
+        <div
+          className={clsx(
+            "md:relative flex md:flex-col flex-row",
+            isMobile && "fixed bottom-5 start-5 "
+          )}
+        >
           <SpeechBubble
             text="Give me a star if you liked my work!"
             href="https://github.com/gatodemontecristo/ghibli-dashboard"
             atext="Check my code"
             position="bottom"
+            className=" shadow-xl w-[260px] -top-20"
           />
           <Image
             src="/ghibli-web/mei.png"
