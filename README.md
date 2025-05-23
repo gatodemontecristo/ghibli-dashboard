@@ -98,3 +98,12 @@ Erick Yoichi Dejo - https://linkedin.com/in/erick-dejo-vicente-b819601b6
 Project Link: https://github.com/gatodemontecristo/ghibli-dashboard
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Useful sites -->
+## Useful sites
+
+* Icon site: https://react-icons.github.io/react-icons/
+* Mockup site: https://shots.so/
+* Animate libray documentation: https://animate.style/
+* Tailwind official documentation: https://tailwindcss.com/
+* Ghibili concept page: https://tailwindcss.com/
